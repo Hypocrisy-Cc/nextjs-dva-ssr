@@ -4,10 +4,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
-    "start": "next start",
+    "start": "npm run dev",
     "build": "next build",
-    "starts": "NODE_ENV=production node server.js",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export",
+    "server": "npm run build && npm run server_prod",
+    "server_prod": "NODE_ENV=production node server.js",
+    "server_test": "NODE_ENV=test node server.js",
+    "deploy:remote": "npm run deploy:remote:test && npm run deploy:remote:prod",
+    "deploy:remote:prod": "",
+    "deploy:remote:test": ""
   },
   "dependencies": {
     "antd": "^3.16.1",
