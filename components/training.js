@@ -5,11 +5,10 @@ import { Button } from 'antd'
 class Training extends PureComponent {
   loadTrainingMoreData() {
     const page = this.props.training.page+1
-    this.props.dispatch({ type: 'index/fetchTrainingList', payload: { page } })
+    this.props.dispatch({ type: 'home/fetchTrainingList', payload: { page } })
   }
 
   render () {
-    console.log(this.props)
     return (
       <Fragment>
         {
@@ -28,6 +27,6 @@ class Training extends PureComponent {
 
 export default connect(state => {
   return {
-    ...state.index
+    ...state.home
   }
 })(Training)

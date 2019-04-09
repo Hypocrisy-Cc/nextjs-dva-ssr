@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default {
-  namespace: 'index',
+  namespace: 'home',
   state: {
     activity: {
       page: 1,
@@ -18,15 +18,15 @@ export default {
   },
   reducers: {
     fetchActivityList__(state, { activity }) {
-      return {...state, activity }
+      state.activity = activity
     },
     fetchTrainingList__(state, { training }) {
-      return {...state, training }
+      state.training = training
     }
   },
   effects: {
     *fetchActivityList({ payload = {} }, { put, select }) {
-      const state = yield select(state => state.index.activity)
+      const state = yield select(state => state.home.activity)
       // 没有更多数据
       if (!state.more) {
         return
@@ -53,7 +53,7 @@ export default {
       yield put({ type: 'fetchActivityList__', activity })
     },
     *fetchTrainingList({ payload = {} }, { put, select }) {
-      const state = yield select(state => state.index.training)
+      const state = yield select(state => state.home.training)
       // 没有更多数据
       if (!state.more) {
         return

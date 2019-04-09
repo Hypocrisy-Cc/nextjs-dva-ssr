@@ -17,6 +17,7 @@
   "dependencies": {
     "antd": "^3.16.1",
     "axios": "^0.18.0",
+    "dva-immer": "^0.2.4",
     "dva-loading": "^2.0.6",
     "dva-no-router": "^1.2.1",
     "next": "^8.0.4",

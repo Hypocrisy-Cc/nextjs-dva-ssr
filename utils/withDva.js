@@ -16,6 +16,8 @@ function initDva(initialState) {
   } else {
     app = dva({});
   }
+  // immer
+  app.use(require('dva-immer').default())
   // Loading 插件
   app.use(createLoading())
   const isArray = Array.isArray(models);

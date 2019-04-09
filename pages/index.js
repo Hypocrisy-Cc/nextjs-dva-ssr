@@ -5,14 +5,14 @@ import TrainingComponent from '../components/training'
 
 class Index extends PureComponent {
   static async getInitialProps (props) {
-    await props.dvaStore.dispatch({type: 'index/fetchTrainingList'})
-    await props.dvaStore.dispatch({type: 'index/fetchActivityList'})
+    await props.dvaStore.dispatch({type: 'home/fetchTrainingList'})
+    await props.dvaStore.dispatch({type: 'home/fetchActivityList'})
     return {}
   }
 
   loadActivityMoreData () {
     const page = this.props.activity.page + 1
-    this.props.dispatch({type: 'index/fetchActivityList', payload: {page}})
+    this.props.dispatch({type: 'home/fetchActivityList', payload: {page}})
   }
 
   render () {
@@ -38,6 +38,6 @@ class Index extends PureComponent {
 
 export default connect(state => {
   return {
-    ...state.index
+    ...state.home
   }
 })(Index)
