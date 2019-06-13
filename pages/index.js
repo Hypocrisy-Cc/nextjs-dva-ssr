@@ -5,9 +5,20 @@ import TrainingComponent from '../components/training'
 
 class Index extends PureComponent {
   static async getInitialProps (props) {
+    const startTime = +(new Date().getTime() / 1000)
+    console.log(`startTime: ${startTime}`)
     await props.dvaStore.dispatch({type: 'home/fetchTrainingList'})
+    console.log(`finishedRequest: ${+(new Date().getTime() / 1000)}`)
     await props.dvaStore.dispatch({type: 'home/fetchActivityList'})
+    const endTime = +(new Date().getTime() / 1000)
+    console.log(`endTime: ${endTime}`)
+    console.log(`requestTime: ${endTime - startTime}`)
     return {}
+  }
+
+  componentDidMount () {
+    console.log(this.props)
+    console.log(22222222)
   }
 
   loadActivityMoreData () {
@@ -16,6 +27,8 @@ class Index extends PureComponent {
   }
 
   render () {
+    console.log(process.env.NODE_ENV)
+    console.log(`renderTime: ${+(new Date().getTime() / 1000)}`)
     return (
       <Fragment>
         {
