@@ -3,9 +3,6 @@ import { connect } from 'dva'
 import { Button } from 'antd'
 
 class Training extends PureComponent {
-  componentDidMount () {
-    console.log(33333)
-  }
 
   loadTrainingMoreData() {
     const page = this.props.training.page+1

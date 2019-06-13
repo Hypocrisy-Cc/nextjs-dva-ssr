@@ -64,8 +64,6 @@ export default App => {
         appProps = await App.getInitialProps(appContext)
       }
 
-      console.log(appContext)
-
       return {
         ...appProps,
         initialDvaState: dvaStore.getState()

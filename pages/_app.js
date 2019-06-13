@@ -6,7 +6,6 @@ import withDva from '../utils/withDva'
 class CustomApp extends App {
   render () {
     const { Component, pageProps, dvaStore } = this.props
-    console.log(this.props)
     return (
       <Container>
         <Provider store={dvaStore}>

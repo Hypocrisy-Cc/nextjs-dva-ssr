@@ -40,7 +40,7 @@ export default {
       const activity = {
         ...state,
         page,
-        dataset: [
+        dataset: page === 1 ? ret.dataset : [
           ...state.dataset,
           ...ret.dataset,
         ]
@@ -67,7 +67,7 @@ export default {
       const training = {
         ...state,
         page,
-        dataset: [
+        dataset: page === 1 ? ret.dataset : [
           ...state.dataset,
           ...ret.dataset,
         ]
