@@ -16,3 +16,4 @@ __node_modules
 __tmp
 package-lock.json
 yarn-error.log
+.history
